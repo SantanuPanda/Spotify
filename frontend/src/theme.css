@@ -1,0 +1,256 @@
+/* ========================================
+   Design System - CSS Variables
+   ======================================== */
+
+:root {
+  /* ===== Colors ===== */
+  
+  /* Primary Colors (Spotify-inspired) */
+  --color-primary: #1db954;
+  --color-primary-hover: #1ed760;
+  --color-primary-dark: #169c46;
+  --color-primary-light: #1fdf64;
+  
+  /* Secondary Colors */
+  --color-secondary: #191414;
+  --color-secondary-light: #282828;
+  --color-secondary-dark: #121212;
+  
+  /* Accent Colors */
+  --color-accent: #ff6b6b;
+  --color-accent-hover: #ff5252;
+  
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+  
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-text-tertiary: #888888;
+  --color-text-dark: #000000;
+  --color-text-muted: #737373;
+  
+  /* Background Colors */
+  --color-bg-primary: #121212;
+  --color-bg-secondary: #181818;
+  --color-bg-tertiary: #282828;
+  --color-bg-hover: #2a2a2a;
+  --color-bg-light: #ffffff;
+  
+  /* Status Colors */
+  --color-success: #1db954;
+  --color-error: #e22134;
+  --color-warning: #ffa726;
+  --color-info: #3b82f6;
+  
+  /* Border Colors */
+  --color-border: #282828;
+  --color-border-light: #404040;
+  --color-border-dark: #181818;
+  
+  /* ===== Typography ===== */
+  
+  /* Font Families */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+  --font-heading: 'Circular Std', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.05em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+  
+  /* ===== Spacing ===== */
+  --space-xs: 0.25rem;      /* 4px */
+  --space-sm: 0.5rem;       /* 8px */
+  --space-md: 1rem;         /* 16px */
+  --space-lg: 1.5rem;       /* 24px */
+  --space-xl: 2rem;         /* 32px */
+  --space-2xl: 2.5rem;      /* 40px */
+  --space-3xl: 3rem;        /* 48px */
+  --space-4xl: 4rem;        /* 64px */
+  --space-5xl: 5rem;        /* 80px */
+  
+  /* ===== Border Radius ===== */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;    /* 2px */
+  --radius-base: 0.25rem;   /* 4px */
+  --radius-md: 0.375rem;    /* 6px */
+  --radius-lg: 0.5rem;      /* 8px */
+  --radius-xl: 0.75rem;     /* 12px */
+  --radius-2xl: 1rem;       /* 16px */
+  --radius-3xl: 1.5rem;     /* 24px */
+  --radius-full: 9999px;
+  
+  /* ===== Shadows ===== */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-2xl: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  /* ===== Transitions ===== */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  --transition-slower: 500ms ease-in-out;
+  
+  /* ===== Z-Index ===== */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  
+  /* ===== Breakpoints (for reference in JS) ===== */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+  
+  /* ===== Container Widths ===== */
+  --container-xs: 540px;
+  --container-sm: 720px;
+  --container-md: 960px;
+  --container-lg: 1140px;
+  --container-xl: 1320px;
+  
+  /* ===== Component Specific ===== */
+  
+  /* Buttons */
+  --button-padding-sm: var(--space-sm) var(--space-md);
+  --button-padding-md: var(--space-md) var(--space-xl);
+  --button-padding-lg: var(--space-lg) var(--space-2xl);
+  
+  /* Inputs */
+  --input-height-sm: 2rem;
+  --input-height-md: 2.5rem;
+  --input-height-lg: 3rem;
+  --input-padding: var(--space-sm) var(--space-md);
+  --input-border-width: 1px;
+  --input-focus-ring: 0 0 0 3px rgba(29, 185, 84, 0.2);
+  
+  /* Cards */
+  --card-padding: var(--space-lg);
+  --card-bg: var(--color-bg-secondary);
+  --card-border-radius: var(--radius-lg);
+  
+  /* Navigation */
+  --nav-height: 64px;
+  --sidebar-width: 240px;
+}
+
+/* ========================================
+   Dark Theme (Default)
+   ======================================== */
+[data-theme="dark"] {
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-bg-primary: #121212;
+  --color-bg-secondary: #181818;
+  --color-bg-tertiary: #282828;
+}
+
+/* ========================================
+   Light Theme
+   ======================================== */
+[data-theme="light"] {
+  --color-text-primary: #000000;
+  --color-text-secondary: #4a4a4a;
+  --color-text-tertiary: #888888;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-tertiary: #e9ecef;
+  --color-bg-hover: #f0f0f0;
+  --color-border: #dee2e6;
+  --color-border-light: #e9ecef;
+  --card-bg: #ffffff;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+/* Typography Utilities */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+
+/* Font Weight Utilities */
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* Color Utilities */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+
+/* Background Utilities */
+.bg-primary { background-color: var(--color-bg-primary); }
+.bg-secondary { background-color: var(--color-bg-secondary); }
+.bg-tertiary { background-color: var(--color-bg-tertiary); }
+
+/* Spacing Utilities */
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
