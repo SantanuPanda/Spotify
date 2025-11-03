@@ -75,6 +75,7 @@ async function googleAuthCallback(req, res) {
         secure: process.env.NODE_ENV === 'production',
         sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
         maxAge: 24 * 60 * 60 * 1000, // 1 day
+        path: '/',
       };
 
       res.cookie("authtoken", token, cookieOptions);
@@ -122,6 +123,7 @@ async function googleAuthCallback(req, res) {
       secure: process.env.NODE_ENV === 'production',
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days
+      path: '/', // Explicitly set path
     };
 
     if (process.env.NODE_ENV === 'production') {
@@ -176,6 +178,7 @@ const loginUser = async (req, res) => {
       secure: process.env.NODE_ENV === 'production',
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days
+      path: '/',
     };
 
     res.cookie("authtoken", token, cookieOptions);
@@ -199,7 +202,9 @@ const loginUser = async (req, res) => {
 
 // ------------------ LOGOUT ------------------
 const logoutUser = async (req, res) => {
+
   const authtoken = req.cookies.authtoken;
+
   if (!authtoken) {
     return res.status(400).json({ message: "No active session" });
   }
@@ -211,17 +216,17 @@ const logoutUser = async (req, res) => {
       2 * 24 * 60 * 60
     ); // expire in 2 days
 
+    // CRITICAL: clearCookie must use the EXACT same options as when setting the cookie
     const clearOptions = {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+      path: '/',
     };
 
-    if (process.env.NODE_ENV === 'production') {
-      clearOptions.domain = '.onrender.com';
-    }
-
-    res.clearCookie("authtoken", clearOptions);
+    console.log("🗑️ Clearing cookie 'authtoken' with options:", clearOptions);
+    res.clearCookie("authtoken", clearOptions); // "authtoken" is the cookie name, not the value!
+    console.log("✅ Logout successful for user");
     res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });

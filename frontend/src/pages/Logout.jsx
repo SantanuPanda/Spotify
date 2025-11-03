@@ -13,22 +13,14 @@ function Logout() {
     setLoading(true);
     setError("");
     try {
-      // Call backend logout endpoint. Use POST to be explicit; backend should accept this.
+      // Call backend logout endpoint with credentials to clear cookie
       await axios.get(
         `${BACKEND_URL}/api/auth/logout`,
         { withCredentials: true }
       );
 
-      // Clear any client-side tokens/storage (best-effort)
-      try {
-        localStorage.removeItem('authtoken');
-        sessionStorage.removeItem('authtoken');
-      } catch (e) {
-        // ignore
-      }
-
-      // Redirect to login (or home) after successful logout
-      navigate('/login');
+      // Force a hard redirect to login page to clear all state
+      window.location.href = '/login';
     } catch (err) {
       console.error('Logout failed:', err);
       setError(
