@@ -77,10 +77,6 @@ async function googleAuthCallback(req, res) {
         maxAge: 24 * 60 * 60 * 1000, // 1 day
       };
 
-      if (process.env.NODE_ENV === 'production') {
-        cookieOptions.domain = '.onrender.com';
-      }
-
       res.cookie("authtoken", token, cookieOptions);
       
 
@@ -181,11 +177,6 @@ const loginUser = async (req, res) => {
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days
     };
-
-    // In production on Render, set domain to share cookie across subdomains
-    if (process.env.NODE_ENV === 'production') {
-      cookieOptions.domain = '.onrender.com';
-    }
 
     res.cookie("authtoken", token, cookieOptions);
 
